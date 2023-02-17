@@ -1,7 +1,6 @@
 import {ReactNode} from 'react';
 import styled from "styled-components";
 import {TextElem} from "../text-elem";
-import selectIcon from "../../assets/svg/chevron-down.svg"
 import {Field} from "formik";
 
 interface PropTypes {
@@ -39,12 +38,6 @@ const Select = styled.select`
   padding-bottom: 14px;
   font-size: 16px;
   width:100%;
-
-  ::part(icon) {
-    content: url(${selectIcon});
-    opacity: 1;
-    width: 18px;
-  }
 `
 
 export default Component;
