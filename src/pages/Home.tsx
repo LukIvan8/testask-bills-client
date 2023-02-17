@@ -9,6 +9,8 @@ import {Stack} from "../common/stack";
 import {ListLayout} from "../common/list-layout";
 import {useQuery} from "react-query";
 import React from "react";
+import {StyledIonPage} from "../theme/global.styled";
+
 
 export interface BillData {
   billId: number,
@@ -49,7 +51,7 @@ const Home = () => {
     });
 
     return (
-      <IonPage>
+      <StyledIonPage>
         <Toolbar>
           <ItemWrapper slot="start">
             <TextElem size={9} weight="bold" color="black" tid="bill.header.history"/>
@@ -77,7 +79,7 @@ const Home = () => {
             }
           </ListLayout>
         </IonContent>
-      </IonPage>
+      </StyledIonPage>
     );
 
   }
