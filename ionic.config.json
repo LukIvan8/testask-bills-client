@@ -1,0 +1,8 @@
+{
+  "name": "testask-bills-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "forceDarkMode": "false"
+}
