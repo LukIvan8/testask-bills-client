@@ -21,7 +21,7 @@ const BackButton = styled(IonItem)`
 
 
 const createNewItem = async (newBill: BillData) => {
-  const response = await fetch('http://localhost:3000/bill/create', {
+  const response = await fetch('https://testask-bills-api.herokuapp.com/bill/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -44,7 +44,7 @@ const formatLabel = (initLabel:string) => {
 
 const Home = () => {
     const {data, isLoading} = useQuery('bills', async () => {
-      const data = await fetch('http://localhost:3000/bill/list')
+      const data = await fetch('https://testask-bills-api.herokuapp.com/bill/list')
       const result = await data.json();
       console.log(result)
       return result;
