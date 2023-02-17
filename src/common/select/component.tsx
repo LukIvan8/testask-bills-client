@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import {ReactNode} from 'react';
 import styled from "styled-components";
 import {TextElem} from "../text-elem";
 import selectIcon from "../../assets/svg/chevron-down.svg"

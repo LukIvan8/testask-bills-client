@@ -1,5 +1,5 @@
 import {Redirect, Route} from 'react-router-dom';
-import {IonRouterOutlet, setupIonicReact} from '@ionic/react';
+import {IonApp, IonRouterOutlet, setupIonicReact} from '@ionic/react';
 import {IonReactRouter} from '@ionic/react-router';
 import Home from './pages/Home';
 import Create from "./pages/Create";
@@ -22,10 +22,16 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import {StyledIonApp} from './theme/ionic.styled';
+import styled from "styled-components";
 
 
 setupIonicReact();
+
+const StyledIonApp = styled(IonApp)`
+  --ion-background-color: none;
+  --background: none;
+  background: linear-gradient(to bottom, #FBF3F4, #B8D0E8);
+`;
 
 
 const App: React.FC = () => (
