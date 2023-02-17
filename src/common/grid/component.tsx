@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import {ReactNode} from 'react';
 import styled from "styled-components";
 
 interface PropTypes {
@@ -16,7 +16,7 @@ const Component = (props:PropTypes) => {
 
 const Grid = styled.div`
   display: grid;
-  gap: ${(props:PropTypes) => props.gap ? props.gap : "1rem"});
+  gap: ${(props:PropTypes) => props.gap ? props.gap : "1rem"};
   width: 90%;
   margin: 0 auto;
 `
