@@ -9,7 +9,7 @@ import {Button} from "../../common/button";
 interface PropTypes {
   transactionTypes: { value: string, label: string }[]
   providers: ProviderType
-  values: FormikValues
+  values: any
   handleChange?: any
   setFieldValue: Function
 }

@@ -32,7 +32,7 @@ const paymentProviders = {
 
 const Container = (props: PropTypes) => {
   return (
-    <Formik onSubmit={(values, {setSubmitting}) => {
+    <Formik onSubmit={(values:any, {setSubmitting}:any) => {
       // @ts-ignore
       values.privateAccount = Number(values.privateAccount)
       // @ts-ignore
@@ -42,7 +42,7 @@ const Container = (props: PropTypes) => {
       setSubmitting(false)
     }}
             initialValues={{transactionType: "", provider: "", privateAccount: "", paymentAmount: ""}}>
-      {({values, handleChange, setFieldValue})=>(<Component setFieldValue={setFieldValue} handleChange={handleChange} values={values} transactionTypes={paymentTypes} providers={paymentProviders}/>)}
+      {({values, handleChange, setFieldValue}:any)=>(<Component setFieldValue={setFieldValue} handleChange={handleChange} values={values} transactionTypes={paymentTypes} providers={paymentProviders}/>)}
     </Formik>
   );
 };
