@@ -28,12 +28,17 @@ const formatDate = (timestamp: string) => {
 }
 
 const Home = () => {
-    const {data, isLoading} = useQuery('bills', async () => {
+    const {data, isLoading, error} = useQuery('bills', async () => {
       const data = await fetch('http://localhost:3000/bill/list')
       const result = await data.json();
       console.log(result)
       return result;
     });
+
+    if (isLoading) {
+      console.log("load")
+      return <p>Loading...</p>
+    }
 
     return (
       <IonPage>
@@ -49,19 +54,17 @@ const Home = () => {
         </Toolbar>
         <IonContent>
           <ListLayout>
-            {isLoading ? <TextElem size={10} text="Loading..."/> :
-              data.map((bill: BillData) => {
-                return (<Card key={bill.billId}>
-                  <Stack alignItems="start" justifyContent="none">
-                    <TextElem size={9} text={bill.transactionType}/>
-                  </Stack>
-                  <Stack alignItems="end" justifyContent="space-between">
-                    <TextElem color="secondary" size={7} text={formatDate(bill.creationTime)}/>
-                    <TextElem size={10} text={String(bill.paymentAmount.toFixed(2))}/>
-                  </Stack>
-                </Card>)
-              })
-            }
+            {data.map((bill: BillData) => {
+              return (<Card key={bill.billId}>
+                <Stack alignItems="start" justifyContent="none">
+                  <TextElem size={9} text={bill.transactionType}/>
+                </Stack>
+                <Stack alignItems="end" justifyContent="space-between">
+                  <TextElem color="secondary" size={7} text={formatDate(bill.creationTime)}/>
+                  <TextElem size={10} text={String(bill.paymentAmount.toFixed(2))}/>
+                </Stack>
+              </Card>);
+            })}
           </ListLayout>
         </IonContent>
       </IonPage>
