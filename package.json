@@ -2,6 +2,9 @@
   "name": "testask-bills-client",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "18.12.1"
+  },
   "dependencies": {
     "@capacitor/app": "4.1.1",
     "@capacitor/core": "4.6.3",
